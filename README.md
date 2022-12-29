@@ -42,6 +42,8 @@ Please report any and all (potential) bugs to Isuees or my discord (Chi#4089)
 # Word of advice 
 Honkai Impact much like Genshin (and other affiliated games) uses custom normals for their outlines HOWEVER honkai is a bit messy with their normals so you'll most likely have to fix it manually
 
+and since mmd can't dedicate the tangent slot like most other programs (typical mmd L)
+
 Fortunately not ALL models are like this just a handful
 
 Examples of incorrect provided
