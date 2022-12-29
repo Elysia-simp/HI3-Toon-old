@@ -1,6 +1,6 @@
 # Disclaimer
 
-I am not responsible if you use this shader on models that were not datamined
+I am not fixing anything if you use this shader on models that were not datamined
 
 I will also not go over how to datamine said models you're on your own there
 
@@ -22,6 +22,8 @@ Shader already has flags in place to handle everything for you
 Now you'll want to rip the Material files from the game and apply everything that's avaliable 
 
 you should be good to go from there!
+
+Please report any and all (potential) bugs to Isuees or my discord (Chi#4089)
 
 # Rules
 1) Please credit me (Chi, Chips, Chizukimo) for the shader or call it by name
