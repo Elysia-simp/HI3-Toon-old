@@ -69,7 +69,7 @@ Correct
 PMXE visualization
 
 
-Inocorrect
+Incorrect
 
 <img width="384" alt="incorrect" src="https://user-images.githubusercontent.com/105132829/211109327-df1a7672-1795-4ac9-bdcb-ef23e1bd7a01.PNG">
 
