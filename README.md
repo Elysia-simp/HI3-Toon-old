@@ -1,11 +1,10 @@
+# PLEASE DOWNLOAD FROM [RELEASES](https://github.com/GalacticFairy/HI3-Toon/releases) AND NOT CLONE THE SOURCE CODE IF YOU'RE NOT EDITING THE SHADER
+
 # Disclaimer
 
 I am not fixing anything if you use this shader on models that were not datamined
 
 I will also not go over how to datamine said models you're on your own there
-
-
-To prevent anyone from downloading the source code and getting encoding errors I will be posting it ONLY in [Releases](https://github.com/GalacticFairy/HI3-Toon/releases)
 
 This shouldn't be a problem seeing as you'd see the code either way
 
@@ -62,15 +61,19 @@ PMXE visualization
 
 Inocorrect
 
-![324324](https://user-images.githubusercontent.com/105132829/209910346-b4e4f250-b0db-4a2f-b383-3cfd5c1f6ce5.png)
+<img width="384" alt="incorrect" src="https://user-images.githubusercontent.com/105132829/211109327-df1a7672-1795-4ac9-bdcb-ef23e1bd7a01.PNG">
+
 
 
 Correct
 
-![3](https://user-images.githubusercontent.com/105132829/209910130-ae857e28-30f3-4af4-ae3f-6c268f123e3c.png)
+<img width="371" alt="correct" src="https://user-images.githubusercontent.com/105132829/211109342-50373ba9-b847-4337-9c94-8eb99079c6fe.PNG">
+
 
 
 This would also be a problem regardless of if you don't use mmd or not so any adaptations will need to completely remake custom normals either way
+
+but in short make sure the INSIDE of the hair normals is reversed rather than facing the same direction as the outer later
 
 # Credits
 [Manashiku](https://github.com/Manashiku) - For their Facemap code and in general helping me out!
