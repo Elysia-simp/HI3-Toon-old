@@ -30,7 +30,7 @@ if your mesh is a Face mesh set the lightmap in sph like usual and FaceMap in to
 
 Shader already has flags in place to handle everything for you
 
-
+then move colormask and/or eye star into sub/textures and input them into the proper meshes you need them on (optional)
 
 
 Now you'll want to rip the Material files from the game and apply everything that's avaliable (or guess if you want I guess)
