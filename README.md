@@ -1,5 +1,7 @@
 # PLEASE DOWNLOAD FROM [RELEASES](https://github.com/GalacticFairy/HI3-Toon/releases) AND NOT CLONE THE SOURCE CODE IF YOU'RE NOT EDITING THE SHADER
 
+also read the readme on here... I'd rather not have bug reports just me telling you the shader usage is wrong
+
 # Disclaimer
 
 I am not fixing anything if you use this shader on models that were not datamined
