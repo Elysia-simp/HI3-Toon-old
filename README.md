@@ -13,19 +13,27 @@ This shouldn't be a problem seeing as you'd see the code either way
 # Credits
 [Manashiku](https://github.com/Manashiku) - For their Facemap code and in general helping me out!
 
+# Usage in [Ray-MMD](https://github.com/ray-cast/ray-mmd)
+Putting this here incase you already know how to use the shader (see below if you don't)
+
+It's rather simple just load ray.x and then in ray's materials tab set the model to skybox
+
+The model won't interact with directional lights anymore so keep this in mind
+
+
 # Usage
 in PMX you'll set your Lightmap texture in sph and set that material to Sub_Texture
 
 if there is no lightmap set this material to Disabled
 
-if your mesh is a Face mesh set the FaceMap in toon and set it to +add or any other avaliable sph type
+if your mesh is a Face mesh set the lightmap in sph like usual and FaceMap in toon and set it to +add or any other avaliable sph type
 
 Shader already has flags in place to handle everything for you
 
 
 
 
-Now you'll want to rip the Material files from the game and apply everything that's avaliable 
+Now you'll want to rip the Material files from the game and apply everything that's avaliable (or guess if you want I guess)
 
 you should be good to go from there!
 
