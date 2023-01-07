@@ -84,7 +84,3 @@ Correct
 This would also be a problem regardless of if you don't use mmd or not so any adaptations will need to completely remake custom normals either way
 
 but in short make sure the INSIDE of the hair normals is reversed rather than facing the same direction as the outer later
-
-# Credits
-[Manashiku](https://github.com/Manashiku) - For their Facemap code and in general helping me out!
-
