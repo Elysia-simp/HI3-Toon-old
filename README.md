@@ -8,8 +8,6 @@ I am not fixing anything if you use this shader on models that were not datamine
 
 I will also not go over how to datamine said models you're on your own there
 
-This shouldn't be a problem seeing as you'd see the code either way
-
 # Credits
 [Manashiku](https://github.com/Manashiku) - For their Facemap code and in general helping me out!
 
