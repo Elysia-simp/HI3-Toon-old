@@ -75,19 +75,20 @@ vs_out vs_model ( vs_in i)
 float4 ps_edge(edge_out i) : COLOR0
 {
     float4 color = get_edge_color(tex2D(LightMapSampler, i.uv).a);
-    if(i.vertex.a <= 0.25) //alpha meshes don't use vertex colors and i'm not fighting with it
+    if(i.vertex.a <= 0.05) //alpha meshes don't use vertex colors and i'm not fighting with it
     {
         discard;
     } //one of the VERY few if else's you'll see
     #ifdef alpha_outline
     color.a = tex2D(diffuseSampler, i.uv).a;
     #endif
-    color.rgb = Saturate_Col(color.rgb, 1 + Sat_Slider_add - Sat_Slider_sub);
+    //color.rgb = Saturate_Col(color.rgb, 1 + Sat_Slider_add - Sat_Slider_sub);
     return color * egColor;
 }
 
 float4 ps_model(vs_out i, float vface : VFACE, uniform bool use_uv2) : COLOR0
 {
+    
     //lightdirection check
     light_d = (light_check) ? light_bone._11_12_13 : light_d;
     //this is an actual function in the game
@@ -95,11 +96,15 @@ float4 ps_model(vs_out i, float vface : VFACE, uniform bool use_uv2) : COLOR0
     //im not sure how this'll look compiled in say unity or whatever
     //but this is basically short handing if else
     //would compile faster supposively
+    
     float3 normal = i.normal;
     normal.z *= vface; //they actually flip the whole thing
     //but im not them
     float3 view = i.view;
     float3 h = normalize(view + -light_d);
+    float4 vertex = i.vertex;
+
+
     //
     float4 color = 1;
 
@@ -111,13 +116,10 @@ float4 ps_model(vs_out i, float vface : VFACE, uniform bool use_uv2) : COLOR0
     float4 shad_color, HRRim;
     material_colors(lightmap.a, shad_color, HRRim);
     //dots
-    float ndotl = dot(-light_d, normal);
-    ndotl = smoothstepping(ndotl, uv);
+    float ndotl = dot(light_d, normal) * 0.5 + 0.5; //the second 0.5 was light_area
+    //but i'm not hoyo and that value is typically at 0.51 anyways
 
-    ndotl *= use_subtexture ? (lightmap.g * 2) : 1; //so i don't accidentally include the face
-
-    //probably would lose some texture info
-    //if i did it the way they did
+    float Toon = !use_subtexture ? face_shadow_rate(uv) : shadow_calc2(ndotl, vertex.r, lightmap.g);
 
     float ndotv = dot(normal, view);
     ndotv *= (1 + RRange_add - RRange_sub);
@@ -127,7 +129,7 @@ float4 ps_model(vs_out i, float vface : VFACE, uniform bool use_uv2) : COLOR0
     float4 rim_color = float4(1+Rim_R, 1+Rim_G, 1+Rim_B, 1.0f);
     float3 ndoth = dot(normal, h);
     ndoth = who_am_i_kidding_theyre_all_lesbians(ndoth, lightmap.b, lightmap.r);
-    color.rgb = diffuse.rgb;
+    color.rgb = diffuse.rgb * vertex.r;
     //morph colors
     float4 blush = ColorMask_r * Blush_Slider;
 
@@ -142,8 +144,9 @@ float4 ps_model(vs_out i, float vface : VFACE, uniform bool use_uv2) : COLOR0
     color.rgb = lerp(color.rgb, eye.rgb, eye.a * Eye_Slider);
     #endif
 
+    color.rgb = lerp(color.rgb.rgb * shad_color.rgb, color.rgb.rgb, saturate(Toon + 0.5)); //can't find out how they actually did it
+    //for now
 
-    color.rgb = lerp(color.rgb.rgb * shad_color.rgb, color.rgb.rgb, saturate(ndotl + light_area * (1 + ShadowInt_add - ShadowInt_sub)));
     color.rgb += ((ndotv * rim_color) * (HRRim)) * i.vertex.b + (ndoth * saturate(LightSpecColor * SpecMulti) *lightmap.b);
 
     color.rgb *= (ray_valid) ? 0.66f : 1.0f;
@@ -155,6 +158,7 @@ float4 ps_model(vs_out i, float vface : VFACE, uniform bool use_uv2) : COLOR0
     //though some genshin models actually use this
     #endif
     color.rgb = Saturate_Col(color.rgb, 1 + (Sat_Slider_add) - (Sat_Slider_sub));
+    //color.rgb = Toon;
     return color * egColor;
 }
 
@@ -226,4 +230,8 @@ technique model_tech <string MMDPASS = "object"; >
         PixelShader = compile ps_3_0 ps_edge();
     }
 
+}
+
+technique tech_edge < string MMDPass = "edge"; > //i don't use it
+{
 }

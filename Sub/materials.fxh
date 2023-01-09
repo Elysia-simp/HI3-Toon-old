@@ -25,7 +25,7 @@ float face_shadow_rate(float2 uv) //did some changing here and there but thanks 
     }
 
     // calculate shadow step and facing step
-    float shadow_step = step(abs(rdotl), ((shadow)- Shadow_range));
+    float shadow_step = step(abs(rdotl), ((shadow)- Shadow_range ));
     float facing_step = step(fdotl, 0);
 
     // return shadow step multiplied by facing step
@@ -70,9 +70,18 @@ float4 get_edge_color(float a)
 //also i dont think this is accurate to how they did it at all LOL
 //but it works just the same so who tf cares
 
-float smoothstepping(float ndotl, float2 uv){
-  return use_subtexture ? step(Shadow_range, ndotl) : face_shadow_rate(uv);
+
+float shadow_calc2(float ndotl, float vertexAO, float lightmapAO)
+{
+    float D = max(floor(vertexAO * lightmapAO + 1.5), 0.0f);
+    float shadow_value = (D != 0) ? 1.25 : 1.2;
+    return step(max((D * shadow_value - 0.125) * (0.5 - light_area) + 1.0, 0.0) * ndotl, 0.45);
 }
+
+
+
+
+
 
 float4 rimming_but_not_in_a_gay_way(float ndotv, float4 HRRim) {
 

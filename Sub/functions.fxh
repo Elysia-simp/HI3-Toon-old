@@ -6,6 +6,17 @@ float2 scaleUV(float2 uv, float scale) //for eyestar
     return offset + center;
 }
 
+float2 face_UV(float2 uv)
+{
+   float2 center = 0.5f;
+   uv *= 0.25f;
+   #ifdef eye_right
+   uv.x *= -1;
+   uv.x += center.x;
+   #endif
+   return uv;
+}
+
 float3 Saturate_Col(float3 color, float saturation)
 {
     float3 gray = dot(color, float4(0.299, 0.587, 0.114, 0));
