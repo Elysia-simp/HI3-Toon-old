@@ -144,7 +144,7 @@ float4 ps_model(vs_out i, float vface : VFACE, uniform bool use_uv2) : COLOR0
     color.rgb = lerp(color.rgb, eye.rgb, eye.a * Eye_Slider);
     #endif
 
-    color.rgb = lerp(color.rgb.rgb * shad_color.rgb, color.rgb.rgb, saturate(Toon + (0.5 + ShadowInt_add - ShadowInt_sub)); //can't find out how they actually did it
+    color.rgb = lerp(color.rgb.rgb * shad_color.rgb, color.rgb.rgb, saturate(Toon + (0.5 + ShadowInt_add - ShadowInt_sub))); //can't find out how they actually did it
     //for now
 
     color.rgb += ((ndotv * rim_color) * (HRRim)) * i.vertex.b + (ndoth * saturate(LightSpecColor * SpecMulti) *lightmap.b);
