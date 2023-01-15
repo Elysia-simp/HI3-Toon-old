@@ -2,8 +2,6 @@
 //could be human error but 🤷‍♀️
 //this value is very much the same with ALL models so change at your risk
 
-#define lerpbyz
-
 //optional textures
 //just uncomment the one you need
 //#define ColorMask_Tex "black.png"
