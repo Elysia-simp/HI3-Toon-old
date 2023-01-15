@@ -1,4 +1,8 @@
-#define light_area 0.51f //default but play around with it ig
+#define light_area 0.51f //inverts when lower than 0.5
+//could be human error but 🤷‍♀️
+//this value is very much the same with ALL models so change at your risk
+
+#define lerpbyz
 
 //optional textures
 //just uncomment the one you need
@@ -19,6 +23,7 @@
 
 //alpha stuff 
 //#define alpha_mesh
+//#define alpha_outline
 #define Alpha_Thresh 1.0f //i couldn't find where some characters got this value or if it was defined somewhere i never saw
 
 //rimlight options
