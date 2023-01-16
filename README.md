@@ -2,6 +2,16 @@
 
 also read the readme on here... I'd rather not have bug reports just me telling you the shader usage is wrong
 
+# Regarding bug reports
+
+Now I can't say I understand why you'd want to use this shader with genshin models
+
+and I'm not saying you can't, But I will say under no circumstances unless the errors partain to Fischl or Keqing (those who actually appeared in honkai)
+
+Any and all bug reports related to genshin models will be disregarded as it's technically not the intended use for this shader
+
+I apologize for any inconveniences
+
 # Disclaimer
 
 I am not fixing anything if you use this shader on models that were not datamined
