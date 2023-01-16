@@ -3,6 +3,7 @@
 #include <sub/header.fxh>
 #include <sub/controllers.fxh>
 #include <sub/materials.fxh>
+#include <sub/facials.fxh>
 
 //base structure
 struct vs_in
@@ -75,7 +76,7 @@ vs_out vs_model ( vs_in i)
 float4 ps_edge(edge_out i) : COLOR0
 {
     float4 color = get_edge_color(tex2D(LightMapSampler, i.uv).a);
-    if(i.vertex.a <= 0.05) //alpha meshes don't use vertex colors and i'm not fighting with it
+    if(i.vertex.a <= 0.05 || face_eyes == 1 || face_eyes == 2 || face_mouth == 1 ) //alpha meshes don't use vertex colors and i'm not fighting with it
     {
         discard;
     } //one of the VERY few if else's you'll see
@@ -97,6 +98,11 @@ float4 ps_model(vs_out i, float vface : VFACE, uniform bool use_uv2) : COLOR0
     //but this is basically short handing if else
     //would compile faster supposively
     
+    if(face_eyes == 1 || face_eyes == 2 || face_mouth == 1) //checks if at least ONE of these exists
+    {
+        uv = FacialUV(uv);
+    }
+
     float3 normal = i.normal;
     normal.z *= vface; //they actually flip the whole thing
     //but im not them

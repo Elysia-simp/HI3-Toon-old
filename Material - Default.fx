@@ -2,6 +2,11 @@
 //could be human error but 🤷‍♀️
 //this value is very much the same with ALL models so change at your risk
 
+//uv facial stuff
+#define face_eyes 0 //1: L 2: R
+#define face_mouth 0 // 0: off 1: on
+
+
 //optional textures
 //just uncomment the one you need
 //#define ColorMask_Tex "black.png"

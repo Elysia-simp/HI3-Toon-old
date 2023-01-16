@@ -12,6 +12,7 @@ float3 Saturate_Col(float3 color, float saturation)
     return lerp(gray, color, saturation);
 }
 
+
 //honkai starrail functions
 float3 outlineWidthAdjustZs = float3(0.01, 150., 200.);
 float3 outlineWidthAdjustScales = float3(0.105, 0.2, .3);
@@ -31,7 +32,7 @@ float outlineOffset(float z){ //couldnt get the same fov scaling working for wha
       zRange = outlineWidthAdjustZs.yz;
       scales = outlineWidthAdjustScales.yz;
    }
-   float scale = lerpByZ(scales.x, scales.y, zRange.x, zRange.y, z);
+   float scale = lerpByZ(scales.x + 0.015, scales.y, zRange.x, zRange.y, z);
   return scale*.4971002;
 }
 
