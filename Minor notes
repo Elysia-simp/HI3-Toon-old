@@ -1,0 +1,7 @@
+There are two things I didn't really include in this shader cause 1) too hard with dx9 or 2) didn't see the need at the moment
+
+Those two things being the Stencil masking and Emissions
+
+the alpha channel in the diffuse can be used for emmisions sometimes
+
+and the red channel in the face lightmap can be used for stencil masking (not all characters use this)
