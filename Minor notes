@@ -5,3 +5,8 @@ Those two things being the Stencil masking and Emissions
 the alpha channel in the diffuse can be used for emmisions sometimes
 
 and the red channel in the face lightmap can be used for stencil masking (not all characters use this)
+
+
+There are a bunch of features I didn't use simply cause they're A) Done in realtime or B) they weren't used for the MAJORITY of these characters
+
+This Shader is General use more than anything
