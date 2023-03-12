@@ -73,15 +73,19 @@ float4 get_edge_color(float a)
 
 float shadow_calc2(float ndotl, float vertexAO, float lightmapAO)
 {
-    float D = max(floor(vertexAO * lightmapAO + 1.5), 0.0f);
-    float shadow_value = (D != 0) ? 1.25 : 1.2;
-    return step(max((D * shadow_value - 0.125) * (0.5 - light_area) + 1.0, 0.0) * ndotl, 0.45);
+    float2 Value1 = float2(1.20000005, 1.25);
+    float2 Value2 = float2(-0.100000001, -0.125); //these are static I just left it here
+    //for debugging purposes
+
+    ndotl = ndotl * 0.5 - light_area;
+    ndotl += 1.0f; 
+    ndotl *= vertexAO * (lightmapAO * 2) + 0.5;
+    ndotl = max(floor(ndotl), 0.0);
+
+    float2 shadowvalues = ndotl * Value1 + Value2;
+
+    return (ndotl != 0) ? shadowvalues.y : shadowvalues.x;
 }
-
-
-
-
-
 
 float4 rimming_but_not_in_a_gay_way(float ndotv, float4 HRRim) {
 
@@ -91,8 +95,6 @@ float4 rimming_but_not_in_a_gay_way(float ndotv, float4 HRRim) {
     ndotv = step(0.75, ndotv);
     return ndotv;
 } //should be accurate to the decomp but also cleaned up
-
-
 
 float4 who_am_i_kidding_theyre_all_lesbians(float ndoth,float b,float r)
 {
