@@ -122,8 +122,7 @@ float4 ps_model(vs_out i, float vface : VFACE, uniform bool use_uv2) : COLOR0
     float4 shad_color, HRRim;
     material_colors(lightmap.a, shad_color, HRRim);
     //dots
-    float ndotl = dot(light_d, normal) * 0.5 + 0.5; //the second 0.5 was light_area
-    //but i'm not hoyo and that value is typically at 0.51 anyways
+    float ndotl = dot(-light_d, normal);
 
     float Toon = !use_subtexture ? face_shadow_rate(uv) : shadow_calc2(ndotl, vertex.r, lightmap.g);
 
