@@ -129,7 +129,7 @@ float4 ps_model(vs_out i, float vface : VFACE, uniform bool use_uv2) : COLOR0
 
     float ndotv = dot(normal, view);
     ndotv *= (1 + RRange_add - RRange_sub);
-    ndotv = rimming_but_not_in_a_gay_way(ndotv, HRRim);
+    ndotv = rimming_but_not_in_a_gay_way(ndotv);
     ndotv *= HRRimIntensity;
 
     float4 rim_color = float4(1+Rim_R, 1+Rim_G, 1+Rim_B, 1.0f);
