@@ -83,7 +83,8 @@ float4 ps_edge(edge_out i) : COLOR0
     #ifdef alpha_outline
     color.a = tex2D(diffuseSampler, i.uv).a;
     #endif
-    //color.rgb = Saturate_Col(color.rgb, 1 + Sat_Slider_add - Sat_Slider_sub);
+    color.rgb = Saturate_Col(color.rgb, 1 + Sat_Slider_add - Sat_Slider_sub);
+    color.rgb *= (ray_valid) ? 0.66f : 1.0f;
     return color * egColor;
 }
 
