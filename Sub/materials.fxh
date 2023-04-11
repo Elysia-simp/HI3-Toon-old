@@ -87,7 +87,7 @@ float shadow_calc2(float ndotl, float vertexAO, float lightmapAO)
     return (ndotl != 0) ? shadowvalues.y : shadowvalues.x;
 }
 
-float4 rimming_but_not_in_a_gay_way(float ndotv, float4 HRRim) {
+float4 rimming_but_not_in_a_gay_way(float ndotv) {
 
     float ndotvClamped = clamp(1-ndotv, 0.001f, 1.0f);
     ndotv = pow(ndotvClamped, (0.5 * 2.0f) * (1+ RPow));
