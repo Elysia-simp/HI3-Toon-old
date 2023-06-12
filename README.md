@@ -45,7 +45,7 @@ Now you'll want to rip the Material files from the game and apply everything tha
 
 you should be good to go from there!
 
-Please report any and all (potential) bugs to Isuees or my discord (Chi#4089) or if you want to help out with the shader's accuracy
+Please report any and all (potential) bugs to Isuees or my discord (cbtdwg) or if you want to help out with the shader's accuracy
 
 # Rules
 1) Please credit me (Chi, Chips, Chizukimo) for the shader or call it by name
