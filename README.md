@@ -1,3 +1,11 @@
+# OUTDATED AND WILL EVENETUALLY BE REPLACED WITH ELYSIAN SHADER (coming soon)
+
+# USE AT YOUR OWN CAUTION
+
+
+
+
+
 # PLEASE DOWNLOAD FROM [RELEASES](https://github.com/GalacticFairy/HI3-Toon/releases) AND NOT CLONE THE SOURCE CODE IF YOU'RE NOT EDITING THE SHADER
 
 also read the readme on here... I'd rather not have bug reports just me telling you the shader usage is wrong
