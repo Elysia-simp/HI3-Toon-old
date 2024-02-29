@@ -1,4 +1,4 @@
-# OUTDATED AND WILL EVENETUALLY BE REPLACED WITH [ELYSIAN SHADER](https://github.com/Elysia-simp/Elysian-Shader)
+# OUTDATED AND WILL EVENETUALLY BE REPLACED WITH [ENTROPY SHADER](https://github.com/Elysia-simp/Entropy-Shader)
 
 # USE AT YOUR OWN CAUTION
 
